@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Volkan Tibet Gur</title>
+<meta name="description" content="Volkan Tibet Gur — PhD Candidate in Political Science at Rutgers University. Research on energy, maritime disputes, climate politics, and corporate political activity." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --text: #1f2430;
+    --muted: #5b6472;
+    --line: #e6e3dc;
+    --accent: #1f4068;
+    --accent-soft: #e9eef5;
+    --radius: 10px;
+    --max: 820px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Top nav */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; gap: 22px; align-items: center;
+    flex-wrap: wrap;
+  }
+  nav.top .brand {
+    font-weight: 600;
+    margin-right: auto;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+  }
+  nav.top a {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  nav.top a:hover { color: var(--accent); text-decoration: none; }
+  nav.top a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Pages: only one visible at a time */
+  .page { display: none; padding: 48px 0 80px; }
+  .page.active { display: block; }
+  .page h1.page-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 30px;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+  .page h2.section-h {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 22px;
+    margin: 36px 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .page h2.section-h:first-of-type { margin-top: 0; }
+  .page h3 { font-size: 16px; margin: 22px 0 6px; font-weight: 600; }
+  .page p { margin: 0 0 14px; }
+  .page .muted { color: var(--muted); font-size: 14px; }
+
+  /* Home / Research page */
+  #home .hero {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 36px;
+    align-items: start;
+    padding: 8px 0 8px;
+  }
+  #home .hero img {
+    width: 230px; height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: #ddd;
+  }
+  #home .hero h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 34px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  #home .hero .name {
+    color: var(--muted); font-size: 16px; margin: 0 0 18px;
+  }
+  #home .hero .bio p {
+    font-size: 16px; line-height: 1.7; color: var(--text);
+    margin: 0 0 14px;
+  }
+  .pill-links {
+    display: flex; flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .pill-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 7px 14px 7px 11px;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
+    box-shadow: 0 1px 2px rgba(20,25,35,0.04);
+    transition: transform 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+  }
+  .pill-links a svg {
+    width: 15px; height: 15px;
+    flex-shrink: 0;
+  }
+  .pill-links a:hover {
+    text-decoration: none;
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(31,64,104,0.10);
+  }
+  .pill-links a.email:hover    { color: #d44638; border-color: #d44638; }
+  .pill-links a.linkedin:hover { color: #0a66c2; border-color: #0a66c2; }
+  .pill-links a.twitter:hover  { color: #000; border-color: #000; }
+  .pill-links a.scholar:hover  { color: #4285f4; border-color: #4285f4; }
+  .pill-links a.cv:hover       { color: var(--accent); border-color: var(--accent); }
+
+  @media (max-width: 600px) {
+    #home .hero { grid-template-columns: 1fr; }
+    #home .hero img { width: 160px; height: 160px; }
+  }
+
+  /* Paper cards */
+  .paper {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 0 0 14px;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .paper.no-logo { grid-template-columns: 1fr; }
+  .paper .logo {
+    width: 64px; height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: #f7f5ef;
+  }
+  .paper .body { min-width: 0; }
+  .paper .title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.35;
+    margin: 0 0 4px;
+  }
+  .paper .meta { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .paper .meta .status {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12.5px;
+    margin-right: 6px;
+  }
+  .paper .meta .award {
+    display: inline-block;
+    background: #fdf3d7;
+    color: #8a6d1f;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12.5px;
+    margin-right: 6px;
+  }
+  .paper .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 520px) {
+    .paper { grid-template-columns: 1fr; }
+    .paper .logo { width: 48px; height: 48px; }
+  }
+
+  .btn {
+    display: inline-block;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn.primary:hover { background: #16314f; color: #fff; }
+
+  /* Lists */
+  ul.clean { list-style: none; padding: 0; margin: 0 0 12px; }
+  ul.clean li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: baseline;
+  }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean .course { font-weight: 500; }
+  ul.clean .when { color: var(--muted); font-size: 13.5px; }
+  ul.clean .where { color: var(--muted); font-size: 13.5px; }
+  ul.clean .desc-btn { margin-left: auto; font-size: 12.5px; padding: 4px 10px; }
+
+  /* Teaching banner */
+  figure.teaching-fig { margin: 0 0 28px; }
+  figure.teaching-fig img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    display: block;
+  }
+
+  /* Themed sub-section header inside Working Papers */
+  .theme-h {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 14px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+  .theme-h::before {
+    content: "";
+    width: 22px; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .theme-h::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--line), transparent);
+  }
+  .theme-h.alt { color: #6a4f1c; }
+  .theme-h.alt::before { background: #c89a3b; }
+
+  ul.wip { list-style: none; padding: 0; margin: 0 0 8px; }
+  ul.wip li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 15px;
+  }
+  ul.wip li:last-child { border-bottom: none; }
+
+  /* Modal */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(20,25,35,0.55);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 100;
+    padding: 24px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border-radius: 12px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 28px 30px 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    position: relative;
+  }
+  .modal h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    margin: 0 0 6px;
+    padding-right: 30px;
+    line-height: 1.35;
+  }
+  .modal .meta { color: var(--muted); font-size: 13.5px; margin: 0 0 16px; }
+  .modal p { margin: 0 0 12px; font-size: 15px; line-height: 1.65; }
+  .modal-close {
+    position: absolute; top: 14px; right: 14px;
+    background: none; border: none;
+    font-size: 24px; color: var(--muted); cursor: pointer;
+    line-height: 1; padding: 4px 8px;
+  }
+  .modal-close:hover { color: var(--text); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 40px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <span class="brand">Volkan Tibet Gur</span>
+    <a href="#home" data-page="home">Home</a>
+    <a href="#research" data-page="research">Research</a>
+    <a href="#teaching" data-page="teaching">Teaching</a>
+    <a href="#cv" data-page="cv">CV</a>
+    <a href="#contact" data-page="contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ========== RESEARCH / HOME ========== -->
+<section id="home" class="page">
+  <div class="hero">
+    <img src="profilepic.avif" alt="Volkan Tibet Gur" onerror="this.style.background='#e6e3dc';this.removeAttribute('src');" />
+    <div class="bio">
+      <h1>Welcome,</h1>
+      <p>I am a Ph.D. candidate in Political Science at Rutgers University. My research examines how contemporary geopolitical and environmental risks reshape strategic behavior in international politics, with a focus on territorial disputes, energy/climate politics, and corporate political activity.</p>
+      <p>Methodologically, I combine computational text analysis, survey experiments, and quantitative models to capture how citizens, states, and firms adapt to shifting distributions of power, risk, and regulation. My research has previously appeared in <em>Economics &amp; Politics</em> and <em>Turkish Studies</em>.</p>
+      <div class="pill-links">
+        <a class="linkedin" href="https://www.linkedin.com/in/tibet-gur-a33390160" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.31 2.39 4.31 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="twitter" href="https://twitter.com/tibetgur" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter / X
+        </a>
+        <a class="scholar" href="https://scholar.google.com/citations?user=qbkhn_MAAAAJ&hl=tr" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2L1 9l11 7 9-5.727V17h2V9zM5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+          Google Scholar
+        </a>
+        <a class="cv" href="cv.pdf" aria-label="Curriculum Vitae">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></svg>
+          CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PUBLICATIONS ========== -->
+<section id="research" class="page">
+  <h2 class="section-h">Peer-Reviewed Publications</h2>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Taking Sides: Corporate Social Responsibility and Political Ideology</p>
+      <p class="meta">with Andrey Tomashevskiy · <em>Economics &amp; Politics</em>, 2024</p>
+      <div class="actions">
+        <button class="btn" data-modal="m-cep">Abstract</button>
+        <a class="btn primary" href="https://doi.org/10.1111/ecpo.12288" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Turkey's Isolation from the Eastern Mediterranean Gas Forum: Ideational Mechanisms and Material Interests</p>
+      <p class="meta">with Pınar İpek · <em>Turkish Studies</em>, 23(1), 2022</p>
+      <div class="actions">
+        <button class="btn" data-modal="m-emgf">Abstract</button>
+        <a class="btn primary" href="https://doi.org/10.1080/14683849.2021.1925884" target="_blank" rel="noopener">DOI</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Working Papers</h2>
+
+  <div class="theme-h">Resources and Territorial Disputes</div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Losing Territorial Sovereignty and Resource Access: Computational Text Evidence from Turkiye</p>
+      <p class="meta">
+        <span class="status">Under review</span>
+        <span class="award">ISA 2025 Alexander George Best Paper Award</span>
+      </p>
+      <div class="actions">
+        <button class="btn" data-modal="m-textanalysis">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Territorial Loss Aversion and Energy Security: Public Support for the Use of Force</p>
+      <p class="meta"><span class="status">R&amp;R</span> <em>Conflict Management and Peace Science</em></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-loss">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">How Oil Fuels Maritime Conflict: Presence, Prices and Volatility</p>
+      <p class="meta"><span class="status">Working paper</span></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-oilesc">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-h alt">Political Economy of Firms</div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Corporate Political Activity, Partisanship, and Foreign Firms</p>
+      <p class="meta">with Andrey Tomashevskiy · <span class="status">Under review</span></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-cpa">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">MNCs, Climate Self-Regulation, and Public Demand for Stringent Regulation</p>
+      <p class="meta"><span class="status">Working paper</span></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-carbon">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Work in Progress</h2>
+  <ul class="wip">
+    <li>Oil Trade Dependency and the Resource Discovery–Territorial Conflict Nexus</li>
+    <li>Climate Risk Perceptions and Corporate Political Activity: Evidence from 10-K and 20-F Statements</li>
+    <li>Geopolitical Risk and Energy Investment: Field-Level Evidence from Oil and Gas Projects</li>
+  </ul>
+</section>
+
+<!-- ========== TEACHING ========== -->
+<section id="teaching" class="page">
+  <h1 class="page-title">Teaching</h1>
+
+  <figure class="teaching-fig">
+    <img src="photo2inresearchsection.avif" alt="Teaching" onerror="this.parentElement.style.display='none'" />
+  </figure>
+
+  <h2 class="section-h">Instructor of Record</h2>
+  <ul class="clean">
+    <li>
+      <span class="course">International Security</span>
+      <span class="when">DIPL630 · Graduate · Spring 2026</span>
+      <span class="where">Seton Hall University, School of Diplomacy and International Relations</span>
+      <button class="btn desc-btn" data-modal="c-dipl630">Description</button>
+    </li>
+    <li>
+      <span class="course">Strategy in International Relations</span>
+      <span class="when">790:322 · Fall 2025</span>
+      <span class="where">Rutgers University</span>
+      <button class="btn desc-btn" data-modal="c-strategy">Description</button>
+    </li>
+    <li>
+      <span class="course">Oil and International Politics</span>
+      <span class="when">790:253 · Spring 2024, Fall 2025, Spring 2026</span>
+      <span class="where">Rutgers University</span>
+      <button class="btn desc-btn" data-modal="c-oilip">Description</button>
+    </li>
+    <li>
+      <span class="course">Introduction to International Relations</span>
+      <span class="when">790:102 · Summer 2023, Summer 2025</span>
+      <span class="where">Rutgers University</span>
+      <button class="btn desc-btn" data-modal="c-introir">Description</button>
+    </li>
+  </ul>
+
+  <h2 class="section-h">Teaching Assistant</h2>
+  <ul class="clean">
+    <li>
+      <span class="course">Issues in American Foreign Policy</span>
+      <span class="when">790:319 · Spring 2026</span>
+      <span class="where">Rutgers University</span>
+    </li>
+    <li>
+      <span class="course">Nature of Politics</span>
+      <span class="when">790:101 · Fall 2023, Spring 2024</span>
+      <span class="where">Rutgers University</span>
+    </li>
+    <li>
+      <span class="course">Introduction to International Relations</span>
+      <span class="when">790:102 · Fall 2022, Spring 2023</span>
+      <span class="where">Rutgers University</span>
+    </li>
+    <li>
+      <span class="course">Energy Security and Foreign Policy</span>
+      <span class="when">Spring 2020</span>
+      <span class="where">Bilkent University</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ========== CV ========== -->
+<section id="cv" class="page">
+  <h1 class="page-title">CV</h1>
+  <p>A full CV is available as a PDF.</p>
+  <p><a class="btn primary" href="cv.pdf">Download CV (PDF)</a></p>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="page">
+  <h2 class="section-h">Get in Touch</h2>
+
+  <div class="pill-links" style="margin-bottom: 26px;">
+    <a class="email" href="mailto:tibet.gur@rutgers.edu" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      Email
+    </a>
+    <a class="linkedin" href="https://www.linkedin.com/in/tibet-gur-a33390160" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.31 2.39 4.31 5.5v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+
+  <h3>Mailing Address</h3>
+  <p>
+    Department of Political Science, Rutgers University,<br />
+    89 George Street, New Brunswick, NJ 08901, USA
+  </p>
+</section>
+
+<footer>
+  © <span id="yr"></span> Volkan Tibet Gur · Last updated May 2026
+</footer>
+
+</main>
+
+<!-- Modals (abstracts + course descriptions) -->
+<div class="modal-backdrop" id="modal-root">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h3 id="modal-title"></h3>
+    <p class="meta" id="modal-meta"></p>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- Page routing (single-page, hash-based) ---- */
+  const pages = ['home', 'research', 'teaching', 'cv', 'contact'];
+  function showPage(hash) {
+    let target = (hash || '').replace('#', '');
+    if (!pages.includes(target)) target = 'home';
+    pages.forEach(p => {
+      const el = document.getElementById(p);
+      if (el) el.classList.toggle('active', p === target);
+    });
+    document.querySelectorAll('nav.top a[data-page]').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('data-page') === target);
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', () => showPage(location.hash));
+  showPage(location.hash);
+
+  /* ---- Modals (abstracts + course descriptions) ---- */
+  const entries = {
+    'm-cep': {
+      title: 'Taking Sides: Corporate Social Responsibility and Political Ideology',
+      meta: 'with Andrey Tomashevskiy · Economics & Politics, 2024',
+      body: `In the United States and other countries, large private firms are increasingly more likely to take public political stances on controversial issues. Firms behave as ideological actors when they take sides in large public debates on social and economic issues. These stances may involve public speech, changes in the terms of service, or in internal reorganization and intrafirm actions. Despite the increase in firms' political actions, firms' ideological orientations remain unexamined. To answer this question, we collect corporate social responsibility statements from Fortune 1000 firms. Using semi-supervised topic models, we identify topics that reflect stances on environmental and social issues. We then examine if firms are more likely to take stances on political issues due to pragmatic or ideological factors. We find that while pragmatic considerations play a role, firms' political stances are more driven by the ideological orientation of employees and managers. This research contributes a novel measure of firm ideology and sheds new light on the determinants of corporate political activity.`
+    },
+    'm-emgf': {
+      title: "Turkey's Isolation from the Eastern Mediterranean Gas Forum: Ideational Mechanisms and Material Interests",
+      meta: 'with Pınar İpek · Turkish Studies, 23(1), 2022',
+      body: `The energy politics highlight rising tensions and new cooperative patterns in the Eastern Mediterranean region. We question the reasons for the lack of cooperation between Turkey and regional states during the regionalization process, in terms of offshore hydrocarbon resources development, between 2010 and 2020. In contrast to power-driven accounts for cooperation, we demonstrate the role of ideational mechanisms through framing analysis and process tracing. We argue that Turkey's isolation from the Eastern Mediterranean Gas Forum and shifts in Turkish foreign policy preferences are explained plausibly by cognitive priors, redefined causal ideas, and emulation of exogenous ideas.`
+    },
+    'm-oilesc': {
+      title: 'How Oil Fuels Maritime Conflict: Presence, Prices and Volatility',
+      meta: 'Working paper',
+      body: `When and why do oil reserves near claimable maritime areas lead to interstate conflict? I argue that three features of oil — exploitable reserves, high prices, and price volatility — create credible commitment problems among strategic rivals. Exportable reserves raise expectations of a rival's future revenue and military capacity; high prices increase the scale and speed of anticipated power shifts; and price volatility generates shared uncertainty over the future value of contested maritime zones. Because rivals are highly sensitive to relative gains and unlikely to trust adversarial restraint, these conditions increase incentives for militarized interstate disputes. Using observational data from the ICOW project, I find that rival dyads are significantly more likely than non-rivals to experience militarized interstate disputes when exportable reserves are nearby, oil prices are high, and markets are volatile. These findings advance debates on resources, energy markets, and interstate conflict.`
+    },
+    'm-textanalysis': {
+      title: 'Losing Territorial Sovereignty and Resource Access: Computational Text Evidence from Turkiye',
+      meta: 'Under review · ISA 2025 Alexander George Best Paper Award',
+      body: `This article investigates the sources of elite perceptions of territorial sovereignty and resource access in maritime disputes. I argue that three types of adversary-initiated events — bilateral maritime boundary agreements, offshore licensing, and resource discoveries — alter the perceived maritime status quo and heighten domestic concerns over losing sovereign rights and future resource access. I use novel data from 912 Turkish parliamentary speeches (1996–2024) and apply a set of natural language processing methods to measure sovereignty- and resource-related rhetoric. I then link these measures to original event-level data from the Eastern Mediterranean to identify how rival actions reshape elite assessments. The results show that offshore licensing produces large bipartisan increases in sovereignty rhetoric, while confirmed discoveries further fuel concerns over territorial sovereignty and resource access. Maritime boundary agreements activate a securitized sovereignty rhetoric. These findings clarify how external shifts place ruling and opposition actors in a shared domain of losses and generate domestic pressures for escalation.`
+    },
+    'm-loss': {
+      title: 'Territorial Loss Aversion and Energy Security: Public Support for the Use of Force',
+      meta: 'Invited to Revise & Resubmit · Conflict Management and Peace Science',
+      body: `Governments often deploy loss framing and energy-security narratives simultaneously in maritime disputes to justify their claims and signal stronger resolve to adversaries. While these tactics may bolster a state's bargaining position, they also inadvertently risk entrenching public commitment to hardline policies and increasing the political cost of territorial concessions. To test this argument, I administered three online survey experiments with the American public. The results show that framing a dispute as a potential loss detrimental to energy independence increases support for territorial aggression. These effects are primarily driven by loss framing. Energy-security framing amplifies support only when combined with loss framing, but it does not independently mobilize support or outperform economic frames. Moreover, the magnitude of these effects is not contingent on domestic political unity or on whether the other disputant is an ally or rival. These findings provide novel micro-foundational insights into how resource-related narratives shape public support for territorial conflict.`
+    },
+    'm-carbon': {
+      title: 'MNCs, Climate Self-Regulation, and Public Demand for Stringent Regulation',
+      meta: 'Working paper',
+      body: `Climate transition risks are rising, and many firms face growing pressure for stringent government regulation. In response, firms increasingly adopt voluntary climate self-regulation to signal responsibility and reduce political demands for public intervention. I argue that this strategy is conditional in its effects because firms do not face equal regulatory exposure to begin with. Baseline demand for climate regulation varies systematically with national origin, prior environmental conduct, and sector. Foreign firms, firms with a history of violations, and firms in carbon-intensive industries face greater skepticism and higher demand for regulation, while domestic firms benefit from a home-country advantage. These asymmetries also shape when self-regulation works: voluntary climate initiatives are least effective for firms that already enjoy public trust, but more effective for firms facing larger credibility deficits. Using a series of pre-registered factorial and conjoint experiments with the American public, I show that self-regulation does not consistently reduce support for government regulation overall — but when it does, it is most effective for foreign firms, previously prosecuted firms, and firms in carbon-intensive sectors.`
+    },
+    'm-cpa': {
+      title: 'Corporate Political Activity, Partisanship, and Foreign Firms',
+      meta: 'with Andrey Tomashevskiy · Under review',
+      body: `Foreign firms are increasingly participating in the U.S. political system, through lobbying, campaign contributions, or public stances on issues. Yet it is unclear how individuals evaluate corporate political activity by both foreign and domestic firms. We examine individual attitudes toward corporate political activity, arguing that individuals are more tolerant of activity when it aligns with their own policy preferences. We evaluate this hypothesis using a series of survey experiments with a representative sample of U.S. voters, including an experiment-in-an-experiment using Large Language Models (LLMs) to generate treatments. Our evidence shows that individuals are more likely to support corporate activity by co-partisan firms. The pragmatic co-partisanship effect extends to both domestic and foreign firms, including firms from adversary countries like China. Our results suggest that individuals' ideological preferences on corporate participation improve affective evaluations, but have smaller effects for structural beliefs regarding national security and foreign meddling. These findings offer new insights into corporate political activity and the use of LLMs in research.`
+    },
+
+    /* Course descriptions */
+    'c-dipl630': {
+      title: 'International Security (DIPL630, Graduate)',
+      meta: 'Spring 2026 · Seton Hall University, School of Diplomacy and International Relations',
+      body: `International security is about how states and non-state actors threaten, use, and manage force in world politics. Why do wars begin? Why do some disputes escalate while others are resolved peacefully? How do alliances, territorial claims, domestic politics, economic ties, and military technologies shape the choices available to leaders? This course introduces students to the central theories and debates in international security, beginning with foundational explanations for war and peace — realism, bargaining theory, alliances, territorial disputes, democratic peace theory, and economic interdependence. We then turn to contemporary security challenges such as energy security, climate change, cyber conflict, nuclear proliferation, border politics, and domestic polarization. Throughout the semester, students apply these concepts to historical and contemporary cases, including Russia's invasion of Ukraine, alliance politics, resource competition, nuclear deterrence, cyber operations, and border militarization. By the end of the course, students will be able to evaluate competing explanations for international conflict, analyze contemporary security crises, and communicate evidence-based arguments about war, peace, and global politics.`
+    },
+    'c-strategy': {
+      title: 'Strategy in International Relations (01:790:322)',
+      meta: 'Fall 2025 · Rutgers University, New Brunswick',
+      body: `Adversaries get a say in international politics. Strategy demands that you select actions that optimize your outcomes conditional on what your adversary is likely to do — and what your adversary is likely to do depends on preferences, beliefs, information, and the options available. This course explores strategic interactions across many domains of international relations. First, we consider when countries can cooperate to achieve efficient outcomes — in arming, trade, or mitigating climate disruptions. Second, we investigate zero-sum interactions where one side's gain is another's loss, especially international bargaining in the shadow of military force. Third, we consider the effect of military technologies on the likelihood of conflict onset and escalation. Fourth, we examine how domestic politics rearranges strategic choices in the international sphere. Students should emerge from the course with analytical tools essential to understanding international relations: empathizing with one's adversaries, planning ahead, and employing deductive reasoning. Cases include the U.S.–China trade war, prosecutions of human-rights violators, Russia's invasion of Ukraine, the onset of World War I, and efforts to prevent nuclear proliferation.`
+    },
+    'c-oilip': {
+      title: 'Oil and International Politics (01:790:253)',
+      meta: 'Spring 2024, Fall 2025, Spring 2026 · Rutgers University, New Brunswick',
+      body: `In the modern world, access to fossil fuels such as oil and natural gas remains critical to national prosperity and security. States pursue these resources to reduce dependence on foreign energy supplies and to enhance their strategic leverage. This course introduces key theoretical frameworks for understanding international energy politics, including the "resource curse," energy security, the use of energy as a geopolitical weapon, sanctions, and resource-driven territorial disputes. We also examine the role of petro-states and how their reliance on energy exports shapes domestic and foreign policies. Finally, the course explores how climate change is reshaping global competition over conventional energy resources. By the end of the semester, students will be able to analyze contemporary geopolitical challenges involving energy, including Russia's control over European gas supplies, fluctuations in oil prices, instability in oil-rich regions, U.S. military presence in the Persian Gulf, China's energy security strategies, and maritime disputes in the South China Sea, the Arctic, and the Eastern Mediterranean.`
+    },
+    'c-introir': {
+      title: 'Introduction to International Relations (01:790:102)',
+      meta: 'Summer 2023, Summer 2025 · Rutgers University, New Brunswick',
+      body: `International politics is about more than wars and treaties — it is about how states, organizations, and individuals navigate a world of competing interests under conditions of uncertainty. This course introduces students to the central concepts, theories, and analytical methods of international relations, providing the foundation for further study in political science and related fields. We begin with the major theoretical approaches to international relations, which help us explain patterns of conflict and cooperation. We then examine the causes of war and peace, ranging from interstate rivalry to the role of institutions. The second half of the course focuses on the international political economy — covering trade, investment, and development — and concludes with contemporary global challenges such as human rights, non-state actors, and climate change. By the end of the semester, students will have a broad understanding of the key debates in international relations and a set of analytical tools to critically evaluate how global politics affects their own lives.`
+    }
+  };
+
+  const root = document.getElementById('modal-root');
+  const titleEl = document.getElementById('modal-title');
+  const metaEl = document.getElementById('modal-meta');
+  const bodyEl = document.getElementById('modal-body');
+
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-modal');
+      const data = entries[key];
+      if (!data) return;
+      titleEl.textContent = data.title;
+      metaEl.textContent = data.meta;
+      bodyEl.innerHTML = '<p>' + data.body + '</p>';
+      root.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    root.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  root.addEventListener('click', e => { if (e.target === root) closeModal(); });
+  document.querySelector('.modal-close').addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
