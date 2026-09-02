@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Volkan Tibet Gur</title>
-<meta name="description" content="Volkan Tibet Gur — PhD Candidate in Political Science at Rutgers University. Research on energy, maritime disputes, climate politics, and corporate political activity." />
+<meta name="description" content="Volkan Tibet Gur — Postdoctoral Research Associate at the KAPSARC School of Public Policy; Ph.D. in Political Science, Rutgers University. Research on energy, maritime disputes, climate politics, and corporate political activity." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
@@ -153,6 +153,17 @@
   .pill-links a.twitter:hover  { color: #000; border-color: #000; }
   .pill-links a.scholar:hover  { color: #4285f4; border-color: #4285f4; }
   .pill-links a.cv:hover       { color: var(--accent); border-color: var(--accent); }
+
+  /* CV page */
+  .cv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+  .cv-viewer {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    margin: 0 0 12px;
+  }
+  .cv-viewer iframe { display: block; width: 100%; height: 82vh; min-height: 620px; border: 0; }
 
   @media (max-width: 600px) {
     #home .hero { grid-template-columns: 1fr; }
@@ -364,7 +375,7 @@
     <img src="profilepic.avif" alt="Volkan Tibet Gur" onerror="this.style.background='#e6e3dc';this.removeAttribute('src');" />
     <div class="bio">
       <h1>Welcome,</h1>
-      <p>I am a Ph.D. candidate in Political Science at Rutgers University. My research examines how contemporary geopolitical and environmental risks reshape strategic behavior in international politics, with a focus on territorial disputes, energy/climate politics, and corporate political activity.</p>
+      <p>I am a Postdoctoral Research Associate at the King Abdullah Petroleum Studies and Research Center (KAPSARC) School of Public Policy. I received my Ph.D. in Political Science from Rutgers University in 2026. My research examines how contemporary geopolitical and environmental risks reshape strategic behavior in international politics, with a focus on territorial disputes, energy/climate politics, and corporate political activity.</p>
       <p>Methodologically, I combine computational text analysis, survey experiments, and quantitative models to capture how citizens, states, and firms adapt to shifting distributions of power, risk, and regulation. My research has previously appeared in <em>Economics &amp; Politics</em> and <em>Turkish Studies</em>.</p>
       <div class="pill-links">
         <a class="linkedin" href="https://www.linkedin.com/in/tibet-gur-a33390160" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -379,7 +390,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2L1 9l11 7 9-5.727V17h2V9zM5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
           Google Scholar
         </a>
-        <a class="cv" href="cv.pdf" aria-label="Curriculum Vitae">
+        <a class="cv" href="cv.pdf" target="_blank" rel="noopener" aria-label="Curriculum Vitae (PDF)">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></svg>
           CV
         </a>
@@ -395,7 +406,7 @@
   <div class="paper no-logo">
     <div class="body">
       <p class="title">Taking Sides: Corporate Social Responsibility and Political Ideology</p>
-      <p class="meta">with Andrey Tomashevskiy · <em>Economics &amp; Politics</em>, 2024</p>
+      <p class="meta">with Andrey Tomashevskiy · <em>Economics &amp; Politics</em>, 36(3), 2024</p>
       <div class="actions">
         <button class="btn" data-modal="m-cep">Abstract</button>
         <a class="btn primary" href="https://doi.org/10.1111/ecpo.12288" target="_blank" rel="noopener">DOI</a>
@@ -414,6 +425,28 @@
     </div>
   </div>
 
+  <h2 class="section-h">Revise &amp; Resubmit</h2>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Loss Aversion and Energy Security: Public Support for Use of Force</p>
+      <p class="meta"><span class="status">R&amp;R · Resubmitted</span> <em>Conflict Management and Peace Science</em></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-loss">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Corporate Political Activity, Partisanship, and Foreign Firms</p>
+      <p class="meta">with Andrey Tomashevskiy · <span class="status">R&amp;R</span> <em>International Studies Quarterly</em></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-cpa">Abstract</button>
+      </div>
+    </div>
+  </div>
+
   <h2 class="section-h">Working Papers</h2>
 
   <div class="theme-h">Resources and Territorial Disputes</div>
@@ -423,7 +456,7 @@
       <p class="title">Losing Territorial Sovereignty and Resource Access: Computational Text Evidence from Turkiye</p>
       <p class="meta">
         <span class="status">Under review</span>
-        <span class="award">ISA 2025 Alexander George Best Paper Award</span>
+        <span class="award">ISA 2025 Alexander George Best Paper Award (Foreign Policy Analysis Section)</span>
       </p>
       <div class="actions">
         <button class="btn" data-modal="m-textanalysis">Abstract</button>
@@ -433,18 +466,8 @@
 
   <div class="paper no-logo">
     <div class="body">
-      <p class="title">Territorial Loss Aversion and Energy Security: Public Support for the Use of Force</p>
-      <p class="meta"><span class="status">R&amp;R</span> <em>Conflict Management and Peace Science</em></p>
-      <div class="actions">
-        <button class="btn" data-modal="m-loss">Abstract</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="paper no-logo">
-    <div class="body">
-      <p class="title">How Oil Fuels Maritime Conflict: Presence, Prices and Volatility</p>
-      <p class="meta"><span class="status">Working paper</span></p>
+      <p class="title">How Oil Fuels Maritime Sovereignty: Presence, Prices and Volatility</p>
+      <p class="meta"><span class="status">Under review</span></p>
       <div class="actions">
         <button class="btn" data-modal="m-oilesc">Abstract</button>
       </div>
@@ -455,29 +478,46 @@
 
   <div class="paper no-logo">
     <div class="body">
-      <p class="title">Corporate Political Activity, Partisanship, and Foreign Firms</p>
-      <p class="meta">with Andrey Tomashevskiy · <span class="status">Under review</span></p>
+      <p class="title">Asymmetric Exposure to Climate Change Risks and Corporate Self-Regulation</p>
+      <p class="meta"><span class="status">Working paper</span></p>
       <div class="actions">
-        <button class="btn" data-modal="m-cpa">Abstract</button>
+        <button class="btn" data-modal="m-asym">Abstract</button>
       </div>
     </div>
   </div>
 
   <div class="paper no-logo">
     <div class="body">
-      <p class="title">MNCs, Climate Self-Regulation, and Public Demand for Stringent Regulation</p>
+      <p class="title">Home-Country Geopolitical Risks and Dynamic Foreign Lobbying</p>
       <p class="meta"><span class="status">Working paper</span></p>
       <div class="actions">
-        <button class="btn" data-modal="m-carbon">Abstract</button>
+        <button class="btn" data-modal="m-gprlobby">Abstract</button>
       </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Geopolitical Risk Exposure and Corporate Political Activity: Evidence from Earnings Calls and Regulatory Filings</p>
+      <p class="meta"><span class="status">In preparation</span></p>
+      <div class="actions">
+        <button class="btn" data-modal="m-gprcpa">Abstract</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper no-logo">
+    <div class="body">
+      <p class="title">Reputational Risks and Corporate Climate Lobbying</p>
+      <p class="meta"><span class="status">In preparation</span></p>
     </div>
   </div>
 
   <h2 class="section-h">Work in Progress</h2>
   <ul class="wip">
-    <li>Oil Trade Dependency and the Resource Discovery–Territorial Conflict Nexus</li>
     <li>Climate Risk Perceptions and Corporate Political Activity: Evidence from 10-K and 20-F Statements</li>
     <li>Geopolitical Risk and Energy Investment: Field-Level Evidence from Oil and Gas Projects</li>
+    <li>Oil Trade Dependency and the Resource Discovery–Territorial Conflict Nexus</li>
   </ul>
 </section>
 
@@ -545,8 +585,15 @@
 <!-- ========== CV ========== -->
 <section id="cv" class="page">
   <h1 class="page-title">CV</h1>
-  <p>A full CV is available as a PDF.</p>
-  <p><a class="btn primary" href="cv.pdf">Download CV (PDF)</a></p>
+  <p class="muted">Last updated September 2026.</p>
+  <div class="cv-actions">
+    <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Open in new tab</a>
+    <a class="btn" href="cv.pdf" download="Gur_CV.pdf">Download PDF</a>
+  </div>
+  <div class="cv-viewer">
+    <iframe src="cv.pdf#view=FitH&navpanes=0" title="Curriculum Vitae of Volkan Tibet Gur" loading="lazy"></iframe>
+  </div>
+  <p class="muted">If the viewer does not load on your device, <a href="cv.pdf" target="_blank" rel="noopener">open the PDF directly</a>.</p>
 </section>
 
 <!-- ========== CONTACT ========== -->
@@ -572,7 +619,7 @@
 </section>
 
 <footer>
-  © <span id="yr"></span> Volkan Tibet Gur · Last updated May 2026
+  © <span id="yr"></span> Volkan Tibet Gur · Last updated September 2026
 </footer>
 
 </main>
@@ -620,29 +667,40 @@
       body: `The energy politics highlight rising tensions and new cooperative patterns in the Eastern Mediterranean region. We question the reasons for the lack of cooperation between Turkey and regional states during the regionalization process, in terms of offshore hydrocarbon resources development, between 2010 and 2020. In contrast to power-driven accounts for cooperation, we demonstrate the role of ideational mechanisms through framing analysis and process tracing. We argue that Turkey's isolation from the Eastern Mediterranean Gas Forum and shifts in Turkish foreign policy preferences are explained plausibly by cognitive priors, redefined causal ideas, and emulation of exogenous ideas.`
     },
     'm-oilesc': {
-      title: 'How Oil Fuels Maritime Conflict: Presence, Prices and Volatility',
-      meta: 'Working paper',
+      title: 'How Oil Fuels Maritime Sovereignty: Presence, Prices and Volatility',
+      meta: 'Under review',
       body: `When and why do oil reserves near claimable maritime areas lead to interstate conflict? I argue that three features of oil — exploitable reserves, high prices, and price volatility — create credible commitment problems among strategic rivals. Exportable reserves raise expectations of a rival's future revenue and military capacity; high prices increase the scale and speed of anticipated power shifts; and price volatility generates shared uncertainty over the future value of contested maritime zones. Because rivals are highly sensitive to relative gains and unlikely to trust adversarial restraint, these conditions increase incentives for militarized interstate disputes. Using observational data from the ICOW project, I find that rival dyads are significantly more likely than non-rivals to experience militarized interstate disputes when exportable reserves are nearby, oil prices are high, and markets are volatile. These findings advance debates on resources, energy markets, and interstate conflict.`
     },
     'm-textanalysis': {
       title: 'Losing Territorial Sovereignty and Resource Access: Computational Text Evidence from Turkiye',
-      meta: 'Under review · ISA 2025 Alexander George Best Paper Award',
+      meta: 'Under review · ISA 2025 Alexander George Best Paper Award (Foreign Policy Analysis Section)',
       body: `This article investigates the sources of elite perceptions of territorial sovereignty and resource access in maritime disputes. I argue that three types of adversary-initiated events — bilateral maritime boundary agreements, offshore licensing, and resource discoveries — alter the perceived maritime status quo and heighten domestic concerns over losing sovereign rights and future resource access. I use novel data from 912 Turkish parliamentary speeches (1996–2024) and apply a set of natural language processing methods to measure sovereignty- and resource-related rhetoric. I then link these measures to original event-level data from the Eastern Mediterranean to identify how rival actions reshape elite assessments. The results show that offshore licensing produces large bipartisan increases in sovereignty rhetoric, while confirmed discoveries further fuel concerns over territorial sovereignty and resource access. Maritime boundary agreements activate a securitized sovereignty rhetoric. These findings clarify how external shifts place ruling and opposition actors in a shared domain of losses and generate domestic pressures for escalation.`
     },
     'm-loss': {
-      title: 'Territorial Loss Aversion and Energy Security: Public Support for the Use of Force',
-      meta: 'Invited to Revise & Resubmit · Conflict Management and Peace Science',
+      title: 'Loss Aversion and Energy Security: Public Support for Use of Force',
+      meta: 'Revise & Resubmit (resubmitted) · Conflict Management and Peace Science',
       body: `Governments often deploy loss framing and energy-security narratives simultaneously in maritime disputes to justify their claims and signal stronger resolve to adversaries. While these tactics may bolster a state's bargaining position, they also inadvertently risk entrenching public commitment to hardline policies and increasing the political cost of territorial concessions. To test this argument, I administered three online survey experiments with the American public. The results show that framing a dispute as a potential loss detrimental to energy independence increases support for territorial aggression. These effects are primarily driven by loss framing. Energy-security framing amplifies support only when combined with loss framing, but it does not independently mobilize support or outperform economic frames. Moreover, the magnitude of these effects is not contingent on domestic political unity or on whether the other disputant is an ally or rival. These findings provide novel micro-foundational insights into how resource-related narratives shape public support for territorial conflict.`
-    },
-    'm-carbon': {
-      title: 'MNCs, Climate Self-Regulation, and Public Demand for Stringent Regulation',
-      meta: 'Working paper',
-      body: `Climate transition risks are rising, and many firms face growing pressure for stringent government regulation. In response, firms increasingly adopt voluntary climate self-regulation to signal responsibility and reduce political demands for public intervention. I argue that this strategy is conditional in its effects because firms do not face equal regulatory exposure to begin with. Baseline demand for climate regulation varies systematically with national origin, prior environmental conduct, and sector. Foreign firms, firms with a history of violations, and firms in carbon-intensive industries face greater skepticism and higher demand for regulation, while domestic firms benefit from a home-country advantage. These asymmetries also shape when self-regulation works: voluntary climate initiatives are least effective for firms that already enjoy public trust, but more effective for firms facing larger credibility deficits. Using a series of pre-registered factorial and conjoint experiments with the American public, I show that self-regulation does not consistently reduce support for government regulation overall — but when it does, it is most effective for foreign firms, previously prosecuted firms, and firms in carbon-intensive sectors.`
     },
     'm-cpa': {
       title: 'Corporate Political Activity, Partisanship, and Foreign Firms',
-      meta: 'with Andrey Tomashevskiy · Under review',
+      meta: 'with Andrey Tomashevskiy · Revise & Resubmit · International Studies Quarterly',
       body: `Foreign firms are increasingly participating in the U.S. political system, through lobbying, campaign contributions, or public stances on issues. Yet it is unclear how individuals evaluate corporate political activity by both foreign and domestic firms. We examine individual attitudes toward corporate political activity, arguing that individuals are more tolerant of activity when it aligns with their own policy preferences. We evaluate this hypothesis using a series of survey experiments with a representative sample of U.S. voters, including an experiment-in-an-experiment using Large Language Models (LLMs) to generate treatments. Our evidence shows that individuals are more likely to support corporate activity by co-partisan firms. The pragmatic co-partisanship effect extends to both domestic and foreign firms, including firms from adversary countries like China. Our results suggest that individuals' ideological preferences on corporate participation improve affective evaluations, but have smaller effects for structural beliefs regarding national security and foreign meddling. These findings offer new insights into corporate political activity and the use of LLMs in research.`
+    },
+
+    'm-asym': {
+      title: 'Asymmetric Exposure to Climate Change Risks and Corporate Self-Regulation',
+      meta: 'Working paper',
+      body: `As regulatory climate transition risks increase, firms increasingly use self-regulation as a political strategy to preempt demand for stringent government oversight on climate change. I argue that firms' exposure to regulatory climate transition risk is asymmetric and varies with national origin, prior involvement in scandals, and sector. Yet, counterintuitively, more exposed firms derive greater benefits from climate self-regulation and are thus more likely to make public self-regulatory commitments. First, I show support for this argument using a series of online survey experiments with the American public. Second, I test the observational implications of the argument using a novel dataset of publicly traded domestic and foreign firms registered with the U.S. Securities and Exchange Commission from 2001 to 2024. I use ClimateBERT to classify nearly 85 million paragraphs from 10-K and 20-F filings and measure the specificity of firms' climate commitments. I find that firms facing stronger public demand for climate regulation make more climate commitments, but whether those commitments are specific depends on the type of climate liability they face. These findings shed new light on the political economy of firms' political strategies in the age of climate change.`
+    },
+    'm-gprlobby': {
+      title: 'Home-Country Geopolitical Risks and Dynamic Foreign Lobbying',
+      meta: 'Working paper',
+      body: `Foreign firms spend heavily to influence policy in host-country markets, but we know less about why their political effort rises and falls over time. I argue that foreign firms lobby more when geopolitical risk rises in their home countries. As states increasingly pursue geopolitics through firms, home-country risk raises both the threat of targeted economic statecraft against foreign firms and the value of stable access to foreign markets. To test this argument, I compile a firm-year panel of foreign lobbying from 1998 to 2020. I match firms to country-specific geopolitical-risk indices and estimate a within-firm design using the local projections method with two-way fixed effects. The results show that a one-standard-deviation rise in home-country geopolitical risk raises an active foreign firm's U.S. lobbying by about three to four percent in the same year. The findings show that geopolitical risk not only produces economic retrenchment but can also intensify political mobilization abroad when it originates from a foreign firm's home country. These findings shed new light on the determinants of rising foreign corporate political activity.`
+    },
+    'm-gprcpa': {
+      title: 'Geopolitical Risk Exposure and Corporate Political Activity: Evidence from Earnings Calls and Regulatory Filings',
+      meta: 'In preparation',
+      body: `How does rising exposure to geopolitical risks (GPRs) shape firms' political strategies? While existing work shows that rising geopolitical risks depress economic activity and investment, we know little about their effect on corporate political strategies. I argue that geopolitical risks create uncertainty, and exposed firms have greater incentives to expand their political efforts to shield themselves and secure exemptions before committing capital. To test this argument, I measure firms' exposure to geopolitical risks by applying automated text analysis methods to a variety of corporate documents, such as earnings-call transcripts and the risk-factor sections of 10-K and 20-F filings. The results show that (i) rising GPR exposure increases firms' geopolitical lobbying intensity; (ii) while geoeconomic exposure draws entry into geopolitical lobbying, security-based exposure increases the intensity of spending among already active firms; and (iii) the type of geopolitical risk exposure increases lobbying efforts toward the relevant agencies — geoeconomic to trade, security to defense. These findings shed new light on the consequences of rising geopolitical risks for firms' political behavior.`
     },
 
     /* Course descriptions */
